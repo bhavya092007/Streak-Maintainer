@@ -157,7 +157,7 @@ export default function DashboardPage() {
 
   if (loading) return <DashboardSkeleton />;
 
-  const greeting = getGreeting(profile?.timezone || 'UTC');
+  const greeting = getGreeting();
   const firstName = profile?.name?.split(' ')[0] || 'there';
   const today = getTodayString(profile?.timezone || 'UTC');
   const completedCount = habits.filter((h) => h.completedToday).length;

@@ -89,10 +89,8 @@ export function isFutureDate(dateStr: string, timezone: string = 'UTC'): boolean
 /**
  * Get a greeting based on time of day.
  */
-export function getGreeting(timezone: string = 'UTC'): string {
-  const now = new Date();
-  const timeStr = now.toLocaleTimeString('en-US', { timeZone: timezone, hour12: false });
-  const hour = parseInt(timeStr.split(':')[0], 10);
+export function getGreeting(): string {
+  const hour = new Date().getHours();
 
   if (hour < 5) return 'Good night';
   if (hour < 12) return 'Good morning';

@@ -68,19 +68,17 @@ export function Sidebar() {
           {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
           {!collapsed && <span>Collapse</span>}
         </button>
-        <form action={signOut}>
-          <button
-            type="submit"
-            className={cn(
-              'flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-medium text-text-secondary hover:text-accent-red hover:bg-accent-red/10 transition-colors',
-              collapsed && 'justify-center px-0'
-            )}
-            title={collapsed ? 'Sign out' : undefined}
-          >
-            <LogOut size={20} className="shrink-0" />
-            {!collapsed && <span>Sign out</span>}
-          </button>
-        </form>
+        <button
+          onClick={() => signOut()}
+          className={cn(
+            'flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-medium text-text-secondary hover:text-accent-red hover:bg-accent-red/10 transition-colors',
+            collapsed && 'justify-center px-0'
+          )}
+          title={collapsed ? 'Sign out' : undefined}
+        >
+          <LogOut size={20} className="shrink-0" />
+          {!collapsed && <span>Sign out</span>}
+        </button>
       </div>
     </aside>
   );
